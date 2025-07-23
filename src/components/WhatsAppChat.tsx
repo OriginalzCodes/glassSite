@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageCircle, X, Send, User } from 'lucide-react';
+import { MessageCircle, X, Send } from 'lucide-react';
 
 const WhatsAppChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,9 +49,9 @@ const WhatsAppChat: React.FC = () => {
     <>
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-white/10 dark:bg-slate-800/10 backdrop-blur-md border border-white/20 dark:border-slate-700/20 rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden">
+        <div className="fixed bottom-24 right-6 w-80 h-96 bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-between">
+          <div className="p-4 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-between rounded-t-3xl">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-green-500" />
@@ -80,12 +80,12 @@ const WhatsAppChat: React.FC = () => {
                   className={`max-w-[70%] p-3 rounded-2xl ${
                     msg.sender === 'user'
                       ? 'bg-green-500 text-white'
-                      : 'bg-white/20 dark:bg-slate-700/20 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 text-gray-800 dark:text-white'
+                      : 'bg-slate-700/50 backdrop-blur-sm border border-slate-600/30 text-white'
                   }`}
                 >
                   <p className="text-sm">{msg.text}</p>
                   <p className={`text-xs mt-1 ${
-                    msg.sender === 'user' ? 'text-green-100' : 'text-gray-500 dark:text-gray-400'
+                    msg.sender === 'user' ? 'text-green-100' : 'text-gray-400'
                   }`}>
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
@@ -95,7 +95,7 @@ const WhatsAppChat: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-white/10 dark:border-slate-700/10">
+          <div className="p-4 border-t border-slate-700/30">
             <div className="flex space-x-2">
               <input
                 type="text"
@@ -103,7 +103,7 @@ const WhatsAppChat: React.FC = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 rounded-full bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all duration-200 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm"
+                className="flex-1 px-3 py-2 rounded-full bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all duration-200 text-white placeholder-gray-400 text-sm"
               />
               <button
                 onClick={handleSendMessage}
@@ -119,7 +119,7 @@ const WhatsAppChat: React.FC = () => {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 z-40 ${
+        className={`fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 z-40 ${
           isOpen ? 'rotate-180' : ''
         }`}
       >

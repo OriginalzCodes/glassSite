@@ -59,24 +59,24 @@ const Reviews: React.FC = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 px-6">
+    <section id="reviews" className="py-20 px-6 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               What Our Clients Say
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied customers have to say about our services.
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Main Review Card */}
-          <div className="p-8 lg:p-12 rounded-3xl bg-white/10 dark:bg-slate-800/10 backdrop-blur-md border border-white/20 dark:border-slate-700/20 transition-all duration-500">
+          <div className="p-8 lg:p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 transition-all duration-500 shadow-2xl">
             <div className="flex items-start space-x-6">
-              <Quote className="w-12 h-12 text-blue-500 flex-shrink-0 opacity-50" />
+              <Quote className="w-12 h-12 text-cyan-400 flex-shrink-0 opacity-50" />
               
               <div className="flex-1">
                 <div className="flex items-center mb-4">
@@ -86,13 +86,13 @@ const Reviews: React.FC = () => {
                       className={`w-5 h-5 ${
                         i < reviews[currentReview].rating 
                           ? 'text-yellow-400 fill-current' 
-                          : 'text-gray-300'
+                          : 'text-gray-500'
                       }`} 
                     />
                   ))}
                 </div>
                 
-                <p className="text-lg lg:text-xl text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
+                <p className="text-lg lg:text-xl text-gray-200 leading-relaxed mb-6">
                   "{reviews[currentReview].text}"
                 </p>
                 
@@ -101,13 +101,13 @@ const Reviews: React.FC = () => {
                     <img
                       src={reviews[currentReview].image}
                       alt={reviews[currentReview].name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-white/30"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-slate-600/50"
                     />
                     <div>
-                      <div className="font-semibold text-gray-800 dark:text-white">
+                      <div className="font-semibold text-white">
                         {reviews[currentReview].name}
                       </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                      <div className="text-sm text-gray-400">
                         {reviews[currentReview].service}
                       </div>
                     </div>
@@ -116,15 +116,15 @@ const Reviews: React.FC = () => {
                   <div className="flex space-x-2">
                     <button
                       onClick={prevReview}
-                      className="w-10 h-10 rounded-full bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm border border-white/30 dark:border-slate-700/30 flex items-center justify-center hover:bg-white/20 dark:hover:bg-slate-700/20 transition-all duration-200"
+                      className="w-12 h-12 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 flex items-center justify-center hover:bg-slate-700/60 transition-all duration-200"
                     >
-                      <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                      <ChevronLeft className="w-5 h-5 text-gray-300" />
                     </button>
                     <button
                       onClick={nextReview}
-                      className="w-10 h-10 rounded-full bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm border border-white/30 dark:border-slate-700/30 flex items-center justify-center hover:bg-white/20 dark:hover:bg-slate-700/20 transition-all duration-200"
+                      className="w-12 h-12 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 flex items-center justify-center hover:bg-slate-700/60 transition-all duration-200"
                     >
-                      <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                      <ChevronRight className="w-5 h-5 text-gray-300" />
                     </button>
                   </div>
                 </div>
@@ -140,8 +140,8 @@ const Reviews: React.FC = () => {
                 onClick={() => setCurrentReview(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentReview
-                    ? 'bg-blue-500 scale-125'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                    ? 'bg-cyan-400 scale-125 shadow-lg shadow-cyan-400/50'
+                    : 'bg-gray-600 hover:bg-gray-500'
                 }`}
               />
             ))}
@@ -158,13 +158,13 @@ const Reviews: React.FC = () => {
           ].map((stat, index) => (
             <div 
               key={stat.label}
-              className="text-center p-6 rounded-2xl bg-white/10 dark:bg-slate-800/10 backdrop-blur-sm border border-white/20 dark:border-slate-700/20"
+              className="text-center p-6 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 hover:bg-slate-700/40 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+              <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 dark:text-gray-300 font-medium">
+              <div className="text-gray-300 font-medium">
                 {stat.label}
               </div>
             </div>

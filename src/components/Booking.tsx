@@ -51,14 +51,14 @@ const Booking: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <section id="book-now" className="py-20 px-6">
+      <section id="book-now" className="py-20 px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto max-w-2xl">
-          <div className="text-center p-12 rounded-3xl bg-white/10 dark:bg-slate-800/10 backdrop-blur-md border border-white/20 dark:border-slate-700/20">
-            <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+          <div className="text-center p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
+            <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold text-white mb-4">
               Booking Confirmed!
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-lg text-gray-300 mb-8">
               Thank you for choosing SparkleClean! We'll contact you shortly to confirm your appointment details.
             </p>
             <button
@@ -75,7 +75,7 @@ const Booking: React.FC = () => {
                   message: ''
                 });
               }}
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300"
+              className="px-8 py-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/25"
             >
               Book Another Service
             </button>
@@ -86,25 +86,25 @@ const Booking: React.FC = () => {
   }
 
   return (
-    <section id="book-now" className="py-20 px-6">
+    <section id="book-now" className="py-20 px-6 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               Book Your Service
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Schedule your cleaning service in just a few clicks. Choose your preferred date, time, and service type.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <form onSubmit={handleSubmit} className="p-8 lg:p-12 rounded-3xl bg-white/10 dark:bg-slate-800/10 backdrop-blur-md border border-white/20 dark:border-slate-700/20">
+          <form onSubmit={handleSubmit} className="p-8 lg:p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Personal Information */}
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                <h3 className="text-2xl font-bold text-white mb-6">
                   Personal Information
                 </h3>
                 
@@ -117,7 +117,7 @@ const Booking: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white placeholder-gray-400"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ const Booking: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white placeholder-gray-400"
                   />
                 </div>
 
@@ -143,7 +143,7 @@ const Booking: React.FC = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white placeholder-gray-400"
                   />
                 </div>
 
@@ -156,14 +156,14 @@ const Booking: React.FC = () => {
                     value={formData.address}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white placeholder-gray-400"
                   />
                 </div>
               </div>
 
               {/* Service Details */}
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
+                <h3 className="text-2xl font-bold text-white mb-6">
                   Service Details
                 </h3>
 
@@ -173,11 +173,11 @@ const Booking: React.FC = () => {
                     value={formData.service}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white"
+                    className="w-full px-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white"
                   >
-                    <option value="">Select Service</option>
+                    <option value="" className="bg-slate-800">Select Service</option>
                     {services.map(service => (
-                      <option key={service} value={service} className="bg-white dark:bg-slate-800">
+                      <option key={service} value={service} className="bg-slate-800">
                         {service}
                       </option>
                     ))}
@@ -193,7 +193,7 @@ const Booking: React.FC = () => {
                     onChange={handleInputChange}
                     required
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white"
                   />
                 </div>
 
@@ -204,11 +204,11 @@ const Booking: React.FC = () => {
                     value={formData.time}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white"
                   >
-                    <option value="">Select Time</option>
+                    <option value="" className="bg-slate-800">Select Time</option>
                     {timeSlots.map(time => (
-                      <option key={time} value={time} className="bg-white dark:bg-slate-800">
+                      <option key={time} value={time} className="bg-slate-800">
                         {time}
                       </option>
                     ))}
@@ -221,7 +221,7 @@ const Booking: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-4 rounded-2xl bg-white/10 dark:bg-slate-700/10 backdrop-blur-sm border border-white/30 dark:border-slate-600/30 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none"
+                  className="w-full px-4 py-4 rounded-2xl bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200 text-white placeholder-gray-400 resize-none"
                 />
               </div>
             </div>
@@ -230,7 +230,7 @@ const Booking: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:scale-100 disabled:shadow-none"
+                className="px-12 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 disabled:scale-100 disabled:shadow-none"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">
