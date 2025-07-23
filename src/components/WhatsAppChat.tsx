@@ -29,7 +29,7 @@ const WhatsAppChat: React.FC = () => {
       setTimeout(() => {
         const botResponse = {
           id: messages.length + 2,
-          text: "Thanks for your message! I'll connect you with our team shortly. You can also call us at (555) 123-CLEAN for immediate assistance.",
+          text: "Thanks for your message! I'll connect you with our team shortly. You can also call us at +31 629532653 -CLEAN for immediate assistance.",
           sender: 'bot',
           timestamp: new Date()
         };
@@ -38,7 +38,12 @@ const WhatsAppChat: React.FC = () => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  /**
+   * Handles key press events on the message input field.
+   *
+   * @param e Keyboard event
+   */
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
