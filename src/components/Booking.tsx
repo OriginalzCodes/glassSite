@@ -247,6 +247,8 @@ const Booking: React.FC = () => {
       </div>
     </section>
   );
+
+  
 };
 
 export default Booking;

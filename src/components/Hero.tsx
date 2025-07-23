@@ -190,6 +190,7 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
+  
 };
 
 export default Hero;
