@@ -5,11 +5,11 @@ const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const backgroundImages = [
-    'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    'https://plus.unsplash.com/premium_photo-1661664673975-fc0f7f01af79?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=1920',
     'https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=1920',
     'https://images.pexels.com/photos/6197119/pexels-photo-6197119.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    'https://images.pexels.com/photos/4239103/pexels-photo-4239103.jpeg?auto=compress&cs=tinysrgb&w=1920'
+    'https://plus.unsplash.com/premium_photo-1683141112334-d7d404f6e716?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2xlYW5pbmclMjBzdGFmZnxlbnwwfHwwfHx8MA%3D%3D'
   ];
 
   useEffect(() => {
