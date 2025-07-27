@@ -54,28 +54,28 @@ const WhatsAppChat: React.FC = () => {
     <>
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden">
+        <div className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 w-72 sm:w-80 h-80 sm:h-96 bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 rounded-3xl shadow-2xl z-50 flex flex-col overflow-hidden">
           {/* Header */}
           <div className="p-4 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-between rounded-t-3xl">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-green-500" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
+                <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">Effect Facility Support</h3>
+                <h3 className="text-sm sm:text-base font-semibold text-white">Effect Facility Support</h3>
                 <p className="text-xs text-green-100">Online now</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
+              className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200"
             >
-              <X className="w-4 h-4 text-white" />
+              <X className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 p-4 overflow-y-auto space-y-3">
+          <div className="flex-1 p-3 sm:p-4 overflow-y-auto space-y-3">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -88,7 +88,7 @@ const WhatsAppChat: React.FC = () => {
                       : 'bg-slate-700/50 backdrop-blur-sm border border-slate-600/30 text-white'
                   }`}
                 >
-                  <p className="text-sm">{msg.text}</p>
+                  <p className="text-xs sm:text-sm">{msg.text}</p>
                   <p className={`text-xs mt-1 ${
                     msg.sender === 'user' ? 'text-green-100' : 'text-gray-400'
                   }`}>
@@ -100,7 +100,7 @@ const WhatsAppChat: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-slate-700/30">
+          <div className="p-3 sm:p-4 border-t border-slate-700/30">
             <div className="flex space-x-2">
               <input
                 type="text"
@@ -108,13 +108,13 @@ const WhatsAppChat: React.FC = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 rounded-full bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all duration-200 text-white placeholder-gray-400 text-sm"
+                className="flex-1 px-3 py-2 rounded-full bg-slate-700/30 backdrop-blur-sm border border-slate-600/30 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all duration-200 text-white placeholder-gray-400 text-xs sm:text-sm"
               />
               <button
                 onClick={handleSendMessage}
-                className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200"
+                className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200"
               >
-                <Send className="w-4 h-4 text-white" />
+                <Send className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </button>
             </div>
           </div>
@@ -124,20 +124,20 @@ const WhatsAppChat: React.FC = () => {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 z-40 ${
+        className={`fixed bottom-4 sm:bottom-6 right-4 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 z-40 ${
           isOpen ? 'rotate-180' : ''
         }`}
       >
         {isOpen ? (
-          <X className="w-8 h-8 text-white" />
+          <X className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         ) : (
-          <MessageCircle className="w-8 h-8 text-white" />
+          <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         )}
       </button>
 
       {/* Notification Badge */}
       {!isOpen && (
-        <div className="fixed bottom-[4.5rem] right-[4.5rem] w-6 h-6 bg-red-500 rounded-full flex items-center justify-center z-50 animate-pulse">
+        <div className="fixed bottom-[3.5rem] sm:bottom-[4.5rem] right-[3.5rem] sm:right-[4.5rem] w-5 h-5 sm:w-6 sm:h-6 bg-red-500 rounded-full flex items-center justify-center z-50 animate-pulse">
           <span className="text-xs font-bold text-white">1</span>
         </div>
       )}

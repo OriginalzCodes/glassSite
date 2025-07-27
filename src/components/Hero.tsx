@@ -94,12 +94,12 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                   Effect Facility 
                 </span>
@@ -108,14 +108,14 @@ const Hero: React.FC = () => {
                   Clean Homes
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Professional cleaning services that transform your space into a pristine sanctuary. 
                 Experience the difference with our eco-friendly approach and attention to detail.
               </p>
             </div>
 
             {/* Features */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-md mx-auto lg:max-w-none">
               {[
                 { icon: Shield, text: 'Insured & Bonded' },
                 { icon: Star, text: '5-Star Rated' },
@@ -123,10 +123,10 @@ const Hero: React.FC = () => {
               ].map(({ icon: Icon, text }, index) => (
                 <div 
                   key={text}
-                  className="flex flex-col items-center p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 hover:bg-slate-700/40 transition-all duration-300 group"
+                  className="flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 hover:bg-slate-700/40 transition-all duration-300 group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <Icon className="w-6 h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-sm font-medium text-gray-300 text-center">
                     {text}
                   </span>
@@ -135,17 +135,17 @@ const Hero: React.FC = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
                 onClick={scrollToBooking}
-                className="group px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center space-x-2"
+                className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center space-x-2"
               >
                 <span>Book Now</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button 
                 onClick={scrollToServices}
-                className="px-8 py-4 bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 text-gray-300 font-semibold rounded-2xl hover:bg-slate-700/40 hover:text-white transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 text-gray-300 font-semibold rounded-2xl hover:bg-slate-700/40 hover:text-white transition-all duration-300"
               >
                 Learn More
               </button>
@@ -153,23 +153,23 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Glass Card */}
-          <div className="relative">
-            <div className="relative p-8 rounded-3xl bg-slate-800/20 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
+          <div className="relative mt-8 lg:mt-0">
+            <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-800/20 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
               <div className="text-center space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
-                  <Star className="w-10 h-10 text-white" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
+                  <Star className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-2">500+</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-white mb-2">500+</div>
                   <div className="text-gray-400">Happy Clients</div>
                 </div>
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/30">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-cyan-400">2000+</div>
+                    <div className="text-xl sm:text-2xl font-bold text-cyan-400">2000+</div>
                     <div className="text-sm text-gray-400">Homes Cleaned</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">5.0</div>
+                    <div className="text-xl sm:text-2xl font-bold text-purple-400">5.0</div>
                     <div className="text-sm text-gray-400">Rating</div>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ const Hero: React.FC = () => {
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute -top-6 -left-6 p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30">
+            <div className="hidden sm:block absolute -top-6 -left-6 p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium text-gray-300">

@@ -51,14 +51,14 @@ const Booking: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <section id="book-now" className="py-20 px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section id="book-now" className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto max-w-2xl">
-          <div className="text-center p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
-            <CheckCircle className="w-20 h-20 text-green-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="text-center p-8 sm:p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
+            <CheckCircle className="w-16 h-16 sm:w-20 sm:h-20 text-green-400 mx-auto mb-6" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
               Booking Confirmed!
             </h2>
-            <p className="text-lg text-gray-300 mb-8">
+            <p className="text-base sm:text-lg text-gray-300 mb-8 px-4">
               Thank you for choosing Effect Facility ! We'll contact you shortly to confirm your appointment details.
             </p>
             <button
@@ -75,7 +75,7 @@ const Booking: React.FC = () => {
                   message: ''
                 });
               }}
-              className="px-8 py-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/25"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 shadow-lg shadow-blue-500/25"
             >
               Book Another Service
             </button>
@@ -86,25 +86,25 @@ const Booking: React.FC = () => {
   }
 
   return (
-    <section id="book-now" className="py-20 px-6 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
+    <section id="book-now" className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               Book Your Service
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Schedule your cleaning service in just a few clicks. Choose your preferred date, time, and service type.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <form onSubmit={handleSubmit} className="p-8 lg:p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
-            <div className="grid md:grid-cols-2 gap-8">
+          <form onSubmit={handleSubmit} className="p-6 sm:p-8 lg:p-12 rounded-3xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
               {/* Personal Information */}
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-white mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
                   Personal Information
                 </h3>
                 
@@ -163,7 +163,7 @@ const Booking: React.FC = () => {
 
               {/* Service Details */}
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-white mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
                   Service Details
                 </h3>
 
@@ -230,7 +230,7 @@ const Booking: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="px-12 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 disabled:scale-100 disabled:shadow-none"
+                className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 disabled:scale-100 disabled:shadow-none"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">

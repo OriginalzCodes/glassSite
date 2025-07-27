@@ -82,13 +82,15 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
           
           {/* Logo */}
           <div 
-            className="relative w-32 h-32 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl"
+            className="relative w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl transform-gpu"
             style={{
               transform: `scale(${logoScale}) rotateY(${logoScale * 360}deg)`,
+              transformOrigin: 'center center',
+              backfaceVisibility: 'hidden',
               transition: 'transform 1s cubic-bezier(0.34, 1.56, 0.64, 1)'
             }}
           >
-            <Sparkles className="w-16 h-16 text-white" />
+            <Sparkles className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
           </div>
 
           {/* Rotating Ring */}
@@ -104,22 +106,22 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
         {/* Company Name */}
         <div 
-          className="space-y-4"
+          className="space-y-2 sm:space-y-4 px-4"
           style={{
             opacity: textOpacity,
             transform: `translateY(${(1 - textOpacity) * 20}px)`,
             transition: 'all 0.8s ease-out'
           }}
         >
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
             Effect Facility
           </h1>
-          <p className="text-xl text-gray-300 font-light">
+          <p className="text-lg sm:text-xl text-gray-300 font-light">
             Professional Cleaning Services
           </p>
           
           {/* Loading Bar */}
-          <div className="w-64 h-1 bg-slate-700 rounded-full mx-auto mt-8 overflow-hidden">
+          <div className="w-48 sm:w-64 h-1 bg-slate-700 rounded-full mx-auto mt-6 sm:mt-8 overflow-hidden">
             <div 
               className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
               style={{
