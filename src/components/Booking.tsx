@@ -59,7 +59,7 @@ const Booking: React.FC = () => {
               Booking Confirmed!
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              Thank you for choosing SparkleClean! We'll contact you shortly to confirm your appointment details.
+              Thank you for choosing Effect Facility ! We'll contact you shortly to confirm your appointment details.
             </p>
             <button
               onClick={() => {

@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                SparkleClean
+                Effect Facility 
               </span>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-cyan-400 flex-shrink-0" />
                 <span className="text-gray-300">
-                  hello@sparkleclean.com
+                  hello@Effect Facility .com
                 </span>
               </div>
             </div>
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
         <div className="pt-8 border-t border-slate-700/30">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400">
-              © 2024 SparkleClean. All rights reserved.
+              © 2024 Effect Facility . All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">

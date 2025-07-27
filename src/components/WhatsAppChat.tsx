@@ -62,7 +62,7 @@ const WhatsAppChat: React.FC = () => {
                 <MessageCircle className="w-6 h-6 text-green-500" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">SparkleClean Support</h3>
+                <h3 className="font-semibold text-white">Effect Facility Support</h3>
                 <p className="text-xs text-green-100">Online now</p>
               </div>
             </div>

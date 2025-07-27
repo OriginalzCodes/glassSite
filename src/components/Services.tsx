@@ -6,7 +6,7 @@ const Services: React.FC = () => {
     {
       icon: Home,
       title: 'Residential Cleaning',
-      description: 'Complete home cleaning services including kitchens, bathrooms, bedrooms, and living areas.',
+      description: 'Complete Officescleaning services including kitchens, bathrooms, bedrooms, and living areas.',
       price: 'From $89',
       features: ['Deep cleaning', 'Regular maintenance', 'Eco-friendly products']
     },

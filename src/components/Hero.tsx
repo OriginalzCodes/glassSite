@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  Sparkling
+                  Effect Facility 
                 </span>
                 <br />
                 <span className="text-white">

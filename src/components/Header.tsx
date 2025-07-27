@@ -45,7 +45,7 @@ const Header: React.FC = () => {
               <Sparkles className="w-7 h-7 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              SparkleClean
+              Effect Facility 
             </span>
           </div>
 

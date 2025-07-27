@@ -8,7 +8,7 @@ const Reviews: React.FC = () => {
     {
       name: 'Sarah Johnson',
       rating: 5,
-      text: 'Absolutely fantastic service! My home has never been cleaner. The team was professional, thorough, and used eco-friendly products. Highly recommend SparkleClean!',
+      text: 'Absolutely fantastic service! My Offices has never been cleaner. The team was professional, thorough, and used eco-friendly products. Highly recommend Effect Facility !',
       service: 'Residential Cleaning',
       image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150'
     },
