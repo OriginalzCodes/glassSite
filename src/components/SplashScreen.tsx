@@ -57,10 +57,10 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
               key={i}
               className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 2}s`
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+          animationDelay: `${Math.random() * 2}s`
               }}
             />
           ))}
@@ -81,7 +81,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
           />
           
           {/* Logo */}
-          <div 
+            {/* 
+            <div 
             className="relative w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl transform-gpu"
             style={{
               transform: `scale(${logoScale}) rotateY(${logoScale * 360}deg)`,
@@ -89,13 +90,14 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
               backfaceVisibility: 'hidden',
               transition: 'transform 1s cubic-bezier(0.34, 1.56, 0.64, 1)'
             }}
-          >
+            >
             <Sparkles className="w-12 h-12 sm:w-16 sm:h-16 text-white" />
-          </div>
+            </div>
+            */}
 
           {/* Rotating Ring */}
           <div 
-            className="absolute inset-0 border-2 border-cyan-400/30 rounded-3xl"
+            className="absolute inset-0 border-2 border-cyan-500/30 rounded-3xl"
             style={{
               transform: `scale(${logoScale * 1.2})`,
               animation: logoScale ? 'spin 3s linear infinite' : 'none',
@@ -150,7 +152,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
       </div>
 
       {/* Custom Styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes grid-move {
           0% { transform: translate(0, 0); }
           100% { transform: translate(50px, 50px); }
