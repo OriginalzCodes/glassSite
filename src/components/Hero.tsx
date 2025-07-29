@@ -152,7 +152,89 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Glass Card */}
+            {/* Glass Card */}
+            <div className="relative mt-8 lg:mt-0">
+            {/* Carousel for Glass Cards */}
+            <div className="relative p-0 sm:p-8 rounded-3xl bg-slate-800/20 backdrop-blur-xl border border-slate-700/30 shadow-2xl overflow-hidden max-w-xs sm:max-w-none mx-auto">
+              <div className="relative">
+              {/* Glass Card Images */}
+              {[
+                'https://plus.unsplash.com/premium_photo-1678218571226-0476c150f524?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                'https://images.unsplash.com/photo-1626379481874-3dc5678fa8ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                'https://images.unsplash.com/photo-1585417238790-f6d290d6490c?q=80&w=1537&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+              ].map((img, idx) => (
+                <div
+                key={idx}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  idx === currentSlide % 3 ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+                >
+                <img
+                  src={img}
+                  alt={`Glass card ${idx + 1}`}
+                  className="w-full h-48 sm:h-64 object-cover rounded-t-3xl"
+                />
+                </div>
+              ))}
+              {/* Carousel Controls for Glass Card */}
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + 3) % 3)}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-800/40 rounded-full flex items-center justify-center hover:bg-slate-700/60 transition-all duration-300 z-20"
+              >
+                <ChevronLeft className="w-4 h-4 text-white" />
+              </button>
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % 3)}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-800/40 rounded-full flex items-center justify-center hover:bg-slate-700/60 transition-all duration-300 z-20"
+              >
+                <ChevronRight className="w-4 h-4 text-white" />
+              </button>
+              {/* Slide Indicators for Glass Card */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                {[0, 1, 2].map((idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide % 3
+                    ? 'bg-cyan-400 scale-110'
+                    : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+                ))}
+              </div>
+              </div>
+              {/* Card Content */}
+              <div className="text-center space-y-4 pt-4 pb-6 px-4 sm:px-0">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
+                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+              </div>
+              <div>
+                <div className="text-xl sm:text-3xl font-bold text-white mb-1">500+</div>
+                <div className="text-gray-400 text-sm sm:text-base">Happy Clients</div>
+              </div>
+              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-700/30">
+                <div className="text-center">
+                <div className="text-base sm:text-xl font-bold text-cyan-400">2000+</div>
+                <div className="text-xs sm:text-sm text-gray-400">Homes Cleaned</div>
+                </div>
+                <div className="text-center">
+                <div className="text-base sm:text-xl font-bold text-purple-400">5.0</div>
+                <div className="text-xs sm:text-sm text-gray-400">Rating</div>
+                </div>
+              </div>
+              </div>
+            </div>
+            {/* Floating Elements */}
+            <div className="hidden sm:block absolute -top-6 -left-6 p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30">
+              <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-gray-300">
+                Available Now
+              </span>
+              </div>
+            </div>
+            </div>
           <div className="relative mt-8 lg:mt-0">
             <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-800/20 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
               <div className="text-center space-y-6">

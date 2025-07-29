@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 
+  /**
+   * A WhatsApp-like chat component that can be toggled open/closed from a floating button.
+   * The chat window displays a list of messages and allows the user to send new messages.
+   * The component also displays a notification badge when the chat window is closed.
+   */
 const WhatsAppChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
