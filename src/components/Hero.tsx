@@ -248,7 +248,7 @@ const Hero: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/30">
                   <div className="text-center">
                     <div className="text-xl sm:text-2xl font-bold text-cyan-400">2000+</div>
-                    <div className="text-sm text-gray-400">Homes Cleaned</div>
+                    <div className="text-sm text-gray-400">Facilities  Cleaned</div>
                   </div>
                   <div className="text-center">
                     <div className="text-xl sm:text-2xl font-bold text-purple-400">5.0</div>
