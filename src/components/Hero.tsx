@@ -43,7 +43,10 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16" // <-- add pt-16
+    >
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {backgroundImages.map((image, index) => (
@@ -185,7 +188,17 @@ const Hero: React.FC = () => {
               </button>
               <button
                 onClick={() => setCurrentSlide((prev) => (prev + 1) % 3)}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-700/30 rounded-full flex items-center justify-center hover:bg-slate-600/50 transition-all duration-300 z-20"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-700/30 rounded-full flex items-center justify-center hover:bg-slate-600/5                import { createClient } from '@supabase/supabase-js';
+                
+                const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || 'https://your-project.supabase.co';
+                const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
+                
+                export const supabase = createClient(supabaseUrl, supabaseAnonKey);                import { createClient } from '@supabase/supabase-js';
+                
+                const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || 'https://your-project.supabase.co';
+                const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
+                
+                export const supabase = createClient(supabaseUrl, supabaseAnonKey);0 transition-all duration-300 z-20"
               >
                 <ChevronRight className="w-4 h-4 text-white" />
               </button>
