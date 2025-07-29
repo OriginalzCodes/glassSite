@@ -185,7 +185,7 @@ const Hero: React.FC = () => {
               </button>
               <button
                 onClick={() => setCurrentSlide((prev) => (prev + 1) % 3)}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-800/40 rounded-full flex items-center justify-center hover:bg-slate-700/60 transition-all duration-300 z-20"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-700/30 rounded-full flex items-center justify-center hover:bg-slate-600/50 transition-all duration-300 z-20"
               >
                 <ChevronRight className="w-4 h-4 text-white" />
               </button>
