@@ -21,11 +21,9 @@ const Header: React.FC = () => {
     { name: 'Book Now', href: '#book-now' }
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollToSection = useScrollToSection();
+  const handleNavClick = (href: string) => {
+    scrollToSection(href);
     setIsMobileMenuOpen(false);
   };
 
@@ -54,7 +52,7 @@ const Header: React.FC = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavClick(item.href)}
                 className="relative text-gray-300 hover:text-white transition-all duration-300 font-medium group text-sm lg:text-base"
               >
                 {item.name}
@@ -90,7 +88,7 @@ const Header: React.FC = () => {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavClick(item.href)}
                   className="text-gray-300 hover:text-white transition-colors duration-300 font-medium py-2 sm:py-3 text-left"
                 >
                   {item.name}
@@ -106,3 +104,13 @@ const Header: React.FC = () => {
 
 export default Header;
 
+import { useCallback } from 'react';
+
+export function useScrollToSection() {
+  return useCallback((selector: string) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+}

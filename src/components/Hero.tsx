@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star, Shield, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
-
+// import { useScrollToSection } from '../hooks/useScrollToSection';
 const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentGlassSlide, setCurrentGlassSlide] = useState(0);
 
   const backgroundImages = [
     'https://plus.unsplash.com/premium_photo-1661664673975-fc0f7f01af79?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -12,13 +13,27 @@ const Hero: React.FC = () => {
     'https://plus.unsplash.com/premium_photo-1663011218145-c1d0c3ba3542?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   ];
 
+  const glassCardImages = [
+    'https://plus.unsplash.com/premium_photo-1678218571226-0476c150f524?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1626379481874-3dc5678fa8ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1585417238790-f6d290d6490c?q=80&w=1537&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  ];
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [backgroundImages.length]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentGlassSlide((prev) => (prev + 1) % glassCardImages.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [glassCardImages.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
@@ -28,19 +43,7 @@ const Hero: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + backgroundImages.length) % backgroundImages.length);
   };
 
-  const scrollToBooking = () => {
-    const element = document.querySelector('#book-now');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToServices = () => {
-    const element = document.querySelector('#services');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const scrollToSection = useScrollToSection();
 
   return (
     <section
@@ -139,15 +142,15 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button 
-                onClick={scrollToBooking}
+              <button
+                onClick={() => scrollToSection('#book-now')}
                 className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center space-x-2"
               >
                 <span>Book Now</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-              <button 
-                onClick={scrollToServices}
+              <button
+                onClick={() => scrollToSection('#services')}
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/30 backdrop-blur-xl border border-slate-700/30 text-gray-300 font-semibold rounded-2xl hover:bg-slate-700/40 hover:text-white transition-all duration-300"
               >
                 Learn More
@@ -155,122 +158,47 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-            {/* Glass Card */}
-            <div className="relative mt-8 lg:mt-0">
-            {/* Carousel for Glass Cards */}
+          {/* Glass Card Carousel */}
+          <div className="relative mt-8 lg:mt-0">
             <div className="relative p-0 sm:p-8 rounded-3xl bg-slate-800/20 backdrop-blur-xl border border-slate-700/30 shadow-2xl overflow-hidden max-w-xs sm:max-w-none mx-auto">
-              <div className="relative">
-              {/* Glass Card Images */}
-              {[
-                'https://plus.unsplash.com/premium_photo-1678218571226-0476c150f524?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                'https://images.unsplash.com/photo-1626379481874-3dc5678fa8ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                'https://images.unsplash.com/photo-1585417238790-f6d290d6490c?q=80&w=1537&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-              ].map((img, idx) => (
-                <div
-                key={idx}
-                className={`absolute inset-0 transition-opacity duration-700 ${
-                  idx === currentSlide % 3 ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-                >
-                <img
-                  src={img}
-                  alt={`Glass card ${idx + 1}`}
-                  className="w-full h-48 sm:h-64 object-cover rounded-t-3xl"
-                />
-                </div>
-              ))}
-              {/* Carousel Controls for Glass Card */}
-              <button
-                onClick={() => setCurrentSlide((prev) => (prev - 1 + 3) % 3)}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-800/40 rounded-full flex items-center justify-center hover:bg-slate-700/60 transition-all duration-300 z-20"
-              >
-                <ChevronLeft className="w-4 h-4 text-white" />
-              </button>
-              <button
-                onClick={() => setCurrentSlide((prev) => (prev + 1) % 3)}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-slate-700/30 rounded-full flex items-center justify-center hover:bg-slate-600/5                import { createClient } from '@supabase/supabase-js';
-                
-                const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || 'https://your-project.supabase.co';
-                const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
-                
-                export const supabase = createClient(supabaseUrl, supabaseAnonKey);                import { createClient } from '@supabase/supabase-js';
-                
-                const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || 'https://your-project.supabase.co';
-                const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
-                
-                export const supabase = createClient(supabaseUrl, supabaseAnonKey);0 transition-all duration-300 z-20"
-              >
-                <ChevronRight className="w-4 h-4 text-white" />
-              </button>
-              {/* Slide Indicators for Glass Card */}
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-                {[0, 1, 2].map((idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  idx === currentSlide % 3
-                    ? 'bg-cyan-400 scale-110'
-                    : 'bg-white/30 hover:bg-white/50'
-                  }`}
-                />
+              <div className="relative h-48 sm:h-64">
+                {/* Glass Card Images */}
+                {glassCardImages.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className={`absolute inset-0 transition-opacity duration-700 ${
+                      idx === currentGlassSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`Glass card ${idx + 1}`}
+                      className="w-full h-full object-cover rounded-t-3xl"
+                    />
+                  </div>
                 ))}
               </div>
-              </div>
               {/* Card Content */}
-              <div className="text-center space-y-4 pt-4 pb-6 px-4 sm:px-0">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
-                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-3xl font-bold text-white mb-1">500+</div>
-                <div className="text-gray-400 text-sm sm:text-base">Happy Clients</div>
-              </div>
-              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-700/30">
-                <div className="text-center">
-                <div className="text-base sm:text-xl font-bold text-cyan-400">2000+</div>
-                <div className="text-xs sm:text-sm text-gray-400">Homes Cleaned</div>
-                </div>
-                <div className="text-center">
-                <div className="text-base sm:text-xl font-bold text-purple-400">5.0</div>
-                <div className="text-xs sm:text-sm text-gray-400">Rating</div>
-                </div>
-              </div>
-              </div>
-            </div>
-            {/* Floating Elements */}
-            <div className="hidden sm:block absolute -top-6 -left-6 p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30">
-              <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-300">
-                Available Now
-              </span>
-              </div>
-            </div>
-            </div>
-          <div className="relative mt-8 lg:mt-0">
-            <div className="relative p-6 sm:p-8 rounded-3xl bg-slate-800/20 backdrop-blur-xl border border-slate-700/30 shadow-2xl">
-              <div className="text-center space-y-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
-                  <Star className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+              <div className="text-center space-y-4 pt-4 pb-6 px-4 sm:px-0 bg-slate-800/10 rounded-b-3xl">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25 -mt-8 relative z-10 border-4 border-slate-800/20">
+                  <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-white mb-2">500+</div>
-                  <div className="text-gray-400">Happy Clients</div>
+                  <div className="text-xl sm:text-3xl font-bold text-white mb-1">500+</div>
+                  <div className="text-gray-400 text-sm sm:text-base">Happy Clients</div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/30">
+                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-700/30">
                   <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-cyan-400">2000+</div>
-                    <div className="text-sm text-gray-400">Facilities  Cleaned</div>
+                    <div className="text-base sm:text-xl font-bold text-cyan-400">2000+</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Homes Cleaned</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-purple-400">5.0</div>
-                    <div className="text-sm text-gray-400">Rating</div>
+                    <div className="text-base sm:text-xl font-bold text-purple-400">5.0</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Rating</div>
                   </div>
                 </div>
               </div>
             </div>
-            
             {/* Floating Elements */}
             <div className="hidden sm:block absolute -top-6 -left-6 p-4 rounded-2xl bg-slate-800/30 backdrop-blur-xl border border-slate-700/30">
               <div className="flex items-center space-x-2">
@@ -285,7 +213,17 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
-  
 };
 
 export default Hero;
+
+const useScrollToSection = () => {
+  return (selector: string) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+};
+
+export { useScrollToSection };

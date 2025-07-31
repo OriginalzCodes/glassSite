@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Calendar, Clock, MapPin, User, Phone, Mail, CheckCircle } from 'lucide-react';
 
 const Booking: React.FC = () => {
